@@ -7,3 +7,10 @@
 #   ["Action", "Comedy", "Drama", "Horror"].each do |genre_name|
 #     MovieGenre.find_or_create_by!(name: genre_name)
 #   end
+User.destroy_all
+5.times do
+  user = User.create(username: Faker::Internet.username(specifier: 5..15, separators: [ '-' ]), email: Faker::Internet.email, password: "password")
+  5.times do
+    user.tweets.create(content: Faker::Lorem.sentence(word_count: 50))
+  end
+end
