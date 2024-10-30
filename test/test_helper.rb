@@ -11,5 +11,8 @@ module ActiveSupport
     fixtures :all
 
     # Add more helper methods to be used by all tests here...
+    def execute_query(*args, **kwargs)
+      TwitterCloneSchema.execute(*args, **kwargs)
+    end
   end
 end
