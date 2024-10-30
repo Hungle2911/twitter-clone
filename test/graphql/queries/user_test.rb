@@ -1,5 +1,5 @@
 class UserTest < ActiveSupport::TestCase
-  test 'retrieve user info' do
+  test "retrieve user info" do
     user = User.create!(username: "Testuser12", email: "testuser@example.com", password: "password")
 
     query = <<~GQL
